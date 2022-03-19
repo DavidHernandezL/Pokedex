@@ -40,15 +40,8 @@ const fetchPokemon = ( nombre = 'pikachu' ) => {
     const tipos = []; 
     fetch(url).then( res => {
 
-        
-
-        while(statsPokemon.firstChild){
-            statsPokemon.removeChild(statsPokemon.firstChild);
-        }
-
-        while(movePokemon.firstChild){
-            movePokemon.removeChild(movePokemon.firstChild);
-        }
+        cleanScreen( statsPokemon );
+        cleanScreen( movePokemon );
 
         if(res.status != "200"){
 
@@ -88,7 +81,6 @@ const fetchPokemon = ( nombre = 'pikachu' ) => {
         }else {
             bgCard.setAttribute('style',`background:rgb${bgType[tipos[0]]}`);
         }
-        //'style=""'
         const stats = {};
 
         data.stats.forEach( s => {
@@ -118,15 +110,6 @@ const fetchPokemon = ( nombre = 'pikachu' ) => {
     });
 }
 
-console.log(window.location.search);
-
-if(window.location.search) {
-    console.log(window.location.search);
-    const pok = window.location.search.split('=')[1];
-    fetchPokemon(pok);
-}
-
-
 search.addEventListener( 'click' ,( ) => {
     const pokeName = name.value.toString().toLowerCase();
     if(!pokeName){
@@ -138,3 +121,8 @@ search.addEventListener( 'click' ,( ) => {
 })
 
 
+const cleanScreen = ( p ) => {
+    while(p.firstChild){
+        p.removeChild(p.firstChild);
+    }
+}
