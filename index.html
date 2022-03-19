@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 class="title">Pokedex</h1>
+            <div class="search-bar">
+                <input name="pokemonName" id="pokemonName" type="text" placeholder="pikachu" class="search-input">
+                <label for="pokemonName" id="btn">Search</label>
+            </div>
+        </nav>
+    </header>
+    
+    
+    <div class="container">
+        <div class="card">
+            <div class="pokemonImg">
+                <img class="img" src="" alt="">
+            </div>
+
+            <h2 class="namePokemon"></h2>
+            <h3>Tipos</h3>
+            <ul class="type"></ul>
+            <h3>Estadisticas</h3>
+            <ul class="stats"></ul>
+        </div>
+        
+        <div class="pokemonInfo">
+            
+            <h3>Movimientos</h3>
+            <ul class="movimientos"></ul>
+            
+        </div>
+
+        <img class="notFound" src="./img/sad.jpg" alt="Not Found" >
+        <h1 class="notFound">Lo sentimos, no encontramos a tu pokemon</h1>
+    </div>
+    <script src="./js/pokemon.js"></script>
+</body>
+</html>
